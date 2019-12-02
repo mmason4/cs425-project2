@@ -14,6 +14,10 @@
             if ( request.isUserInRole("applicant") ) {
                 response.sendRedirect( request.getContextPath() + "/main/applicant_main.jsp" );
             }
+            else {
+                session.invalidate();
+                response.sendRedirect( request.getContextPath() + "/public/login.jsp" );
+            }
         %>
 
     </body>
